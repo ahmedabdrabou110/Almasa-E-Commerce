@@ -1,0 +1,21 @@
+[debug] [2023-06-24T16:15:57.164Z] ----------------------------------------------------------------------
+[debug] [2023-06-24T16:15:57.166Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\w10\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-06-24T16:15:57.166Z] CLI Version:   12.4.0
+[debug] [2023-06-24T16:15:57.167Z] Platform:      win32
+[debug] [2023-06-24T16:15:57.167Z] Node Version:  v18.16.1
+[debug] [2023-06-24T16:15:57.169Z] Time:          Sat Jun 24 2023 18:15:57 GMT+0200 (توقيت شرق أوروبا الرسمي)
+[debug] [2023-06-24T16:15:57.169Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-24T16:15:57.176Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-24T16:15:57.176Z] > authorizing via signed-in user (a.abdrabou1102000@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Work\AlmasaE-commerce
+
