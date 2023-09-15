@@ -7,13 +7,19 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
 const ChoosePayMethoud = () => {
-    // const [visa,setVisa] = useState(false);
+    const [visa,setVisa] = useState(true);
     const [selectedOption, setSelectedOption] = useState("")
     const totalPrice= useGetTotalPrice();
     const navigate = useNavigate();
     
+    
     const handleForm = e => {
-        
+        e.preventDefault();
+        if(visa === true) {
+            navigate("/user/order/paymethod/delivery")
+        }else{
+            navigate("/user/order/paymethod/paypal")
+        }
     }
 
     const handleChange = e => {
@@ -25,28 +31,13 @@ const ChoosePayMethoud = () => {
         }
     }
 
-    // const handleToken = async token => {
-    //     const cart = {name:"All products", totalPrice};
-    //     const response =await axios.post("http://127.0.0.1:8080/checkout" , {
-    //         token , cart
-    //     }) ; 
-    //     let status = response.data ; 
-    //     if(status === "success") {
-    //         toast.success("تم الشراء بنجاح باستخدام الفيزا", {
-    //             position:"top-right",
-    //             duration:2000,
-    //         })
-    //         navigate("/");
-    //     }else{
-    //         toast.error("حدث خطا ما في اكمال الشراء ");
-    //     }
-    // }
+    
 
     return (
         <div>
             <Toaster />
             <div className="admin-content-text pt-5">اختر طريقة الدفع</div>
-            <form className="user-address-card my-3 px-3">
+            <form className="user-address-card my-3 px-3" style={{height:"200px"}} onSubmit={handleForm}>
                 <Row className="d-flex justify-content-between ">
                     <Col xs="12" className="my-4">
                         <input
@@ -54,7 +45,7 @@ const ChoosePayMethoud = () => {
                             id="group1"
                             type="radio"
                             value="visa"
-                            checked={selectedOption === "visa"}
+                            checked={selectedOption === "visa" }
                             className="mt-2"
                             onChange={handleChange}
                         />
@@ -79,23 +70,19 @@ const ChoosePayMethoud = () => {
                             الدفع عند الاستلام
                         </label>
                     </Col>
+                <Col xs="12" className="d-flex justify-content-end" >
+                    {visa && <button type="submit" className="product-cart-add px-3 pt-2 d-inline me-2">
+                        إتمام الشراء 
+                    </button>}
+                    {!visa && <button type="submit" className="product-cart-add px-3 pt-2 d-inline me-2">
+                        تسجيل الدفع
+                    </button>}
+                </Col>
                 </Row>
             </form>
 
             <Row>
-                <Col xs="12" className="d-flex justify-content-end" >
-                    {/* <div className="product-price d-inline   border"  style={{marginLeft:"20px"}}>{totalPrice} ر.س</div>
-                {!visa && (<StripeCheckout
-                stripeKey='pk_test_51NPwL7IoF9xIXPk9ppejePYp27PeddQw9eZcacFnLZvFqFrZceB4cagYQDd4RlD9HMqTxEvZJPOiYfVcgvcCeKdk00Nzf2HuPw'
-                token={handleToken}
-                billingAddress
-                shippingAddress
-                name="All Products"
-                amount={totalPrice * 100}
-            >
-            </StripeCheckout>)} */}
-                   <Link to="/order/paymethod/delivery" className="product-cart-add px-3 pt-2 d-inline me-2"  onClick={handleForm}>إتمام الشراء</Link>
-                </Col>
+                
             </Row>
             
         </div>

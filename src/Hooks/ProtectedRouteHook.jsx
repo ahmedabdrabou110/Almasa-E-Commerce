@@ -27,8 +27,11 @@ const ProtectedRouteHook = () => {
               }).catch(error => {
                 console.log("error")
               })
+            }else{
+              setIsAdmin(false);
+              setIsUser(false);
             }
-            // console.log(user.email)
+            
           })
     },[])
 

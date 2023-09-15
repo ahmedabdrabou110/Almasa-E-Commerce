@@ -1,9 +1,10 @@
-import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import React, {useState} from "react";
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { toast } from "react-hot-toast";
 import { fireStore, storage } from "../firebase";
 import { addDoc, collection } from "firebase/firestore";
 import shortid from "shortid";
+import { useCollectionData } from "react-firebase-hooks/firestore";
 const useAddProduct = ()=>{
     
     const [title, setTitle] = useState("");
@@ -37,6 +38,8 @@ const useAddProduct = ()=>{
     const onRemove = () => {
 
     }
+
+    
 
     const options = [
         { name: "عبايات ناعمة ", id: 1 },

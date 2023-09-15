@@ -6,23 +6,26 @@ import Pagination from '../../utility/Pagination'
 import { collection } from 'firebase/firestore'
 import { fireStore } from '../../firebase'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
+import Dashboard from '../../components/DashboardAdmin/DasboardAdmin'
 const AdminAllOrdersPage = () => {
     const collectionRef = collection(fireStore , `Buyer-Personal-Info`) ;
     const [data] = useCollectionData(collectionRef);
     
     return (
-        <Container >
+        <Container style={{marginTop:"60px"}} >
             <Row className='py-3'>
                 <Col sm="3" xs="2" md="2">
                     <AdminSideBar />
                 </Col>
+                
 
                 <Col sm="9" xs="10" md="10">
+                <div className='admin-content-text'>ادارة جميع الطلبات</div>
                     {
                         data?.length > 0 && data.map(item =>(
                             <>
                                 <AdminAllOrders item={item} key={item.id} />
-                                <Pagination />
+                                {/* <Pagination /> */}
                             </>
                         ))
                     }

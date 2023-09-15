@@ -69,6 +69,7 @@ const CartPage = () => {
             if(user) {
                 const collectionRef = collection(fireStore , `cart ${uid}`);
                 const docRef = doc(collectionRef , Product.ID);
+                console.log(docRef)
                 deleteDoc(docRef).then(()=>{
                     toast.success("تم حذف المنتج من لعربة بنجاح");
                     location.reload();

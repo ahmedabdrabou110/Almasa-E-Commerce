@@ -1,27 +1,28 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import Ads4 from "../../assets/ads4.jpg"
-import Ads5 from "../../assets/ads5.jpg"
-import Ads6 from "../../assets/ads6.jpg"
-import Ads7 from "../../assets/ads7.jpg"
+import Ads4 from "../../assets/Torah.jpg"
+import Ads5 from "../../assets/Monasaba.jpg"
+import Ads6 from "../../assets/Amalia.jpg"
+import Ads7 from "../../assets/Pure.jpg"
 import AdsCard from '../../utility/AdsCard'
+import { Link } from 'react-router-dom'
 const AdsColor = () => {
   return (
     <div className="p-2">
         <Container >
             <div className="row">
-                <div className="col-sm-6 col-md-6 col-xs-12">
+                <Link to="/النقابات و الطرح" className="col-sm-6 col-md-6 col-xs-12">
                     <AdsCard src={Ads4} />
-                </div>
-                <div className="col-sm-6 col-md-6 col-xs-12">
+                </Link>
+                <Link to="/عبايات مناسبات" className="col-sm-6 col-md-6 col-xs-12">
                     <AdsCard src={Ads5} />
-                </div>
-                <div className="col-sm-6 col-md-6 col-xs-12">
+                </Link>
+                <Link to="/عبايات سوداء" className="col-sm-6 col-md-6 col-xs-12">
                     <AdsCard src={Ads6} />
-                </div>
-                <div className="col-sm-6 col-md-6 col-xs-12">
+                </Link>
+                <Link to="/عبايات سفر" className="col-sm-6 col-md-6 col-xs-12">
                     <AdsCard src={Ads7} />
-                </div>
+                </Link>
             </div>
         </Container>
     </div>

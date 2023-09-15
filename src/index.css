@@ -149,6 +149,20 @@ section.section.section-products {
     cursor: pointer;
   }
 
+  .css-wop1k0-MuiDataGrid-footerContainer {
+    justify-content: space-evenly !important;
+    display: none !important;
+  }
+
+  .MuiToolbar-root > button{
+    position: absolute;
+    right: -25px;
+  }
+
+  .MuiPaper-root {
+    margin-top: 147px;
+  }
+  
   .product-text{
     margin-bottom: 10px;
     font-size: 16px;

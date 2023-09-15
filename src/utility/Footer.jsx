@@ -16,7 +16,7 @@ const Footer = () => {
                         className="d-flex justify-content-end align-items-center ">
                         <div className="d-flex pt-3 mx-2">
                             <PhoneAndroid />
-                            <p className="footer-phone">0122455346356</p>
+                            <p className="footer-phone">01009591787</p>
                         </div>
                         <div style={{ cursor: "pointer" }}>
                             <Facebook/>

@@ -1,29 +1,31 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 import Product1 from '../../assets/product1.jpg'
+import { Box } from '@mui/material'
 const AdminAllOrdersItem = ({item, data}) => {
     const info  = data.data ;
+    console.log(info)
     
     return (
         <Col sm="12">
             <Link
-                to="/admin/orders/23"
+                to={`/admin/orders/${data?.data?.ID}?product=${info?.productId}`}
                 className="cart-item-body my-2 px-1 d-flex"
                 style={{ textDecoration: "none" }}>
-                <img width="160px" height="197px" src={info.image} alt="" />
+                <img width="160px" height="197px" src={info?.image} alt="" />
                 <div className="w-100" style={{marginRight:"20px"}}>
                     <Row className="justify-content-between">
                         <Col sm="12" className=" d-flex flex-row justify-content-between">
-                            <div className="d-inline pt-2 cat-text " style={{marginRight:"20px" , fontSize:"20px"}}>طلب من {item.firstName} {item.lastName}</div>
+                            <div className="d-inline pt-2 cat-text " style={{marginRight:"20px" , fontSize:"20px"}}>طلب من {item?.firstName} {item.lastName}</div>
                             <div className="d-inline pt-2 cat-text">ازاله</div>
                         </Col>
                     </Row>
                     <Row className="justify-content-center mt-2">
                         <Col sm="12" className=" d-flex flex-row justify-content-start">
                             <div className="d-inline pt-2 cat-title">
-                                {info.description}
+                                {info?.description}
                             </div>
                             <div className="d-inline pt-2 cat-rate me-2">4.5</div>
                         </Col>
@@ -31,10 +33,11 @@ const AdminAllOrdersItem = ({item, data}) => {
                     <Row>
                         <Col sm="12" className=" d-flex">
                             <div className="mt-2  cat-text d-inline">الماركة :</div>
-                            <div className="mt-1 barnd-text d-inline mx-1">{info.brand} </div>
-                            <div
-                                className="color  me-1 border"
-                                style={{ backgroundColor: "#E52C2C" }}></div>
+                            <div className="mt-1 barnd-text d-inline mx-1">{info?.brand} </div>
+                            <Box flex={1} />
+                            <div className="mt-2  cat-text d-inline">الحالة  :</div>
+                            <div className="mt-1 barnd-text d-inline mx-1">{item?.state} </div>
+                            
                         </Col>
                     </Row>
 
@@ -47,10 +50,10 @@ const AdminAllOrdersItem = ({item, data}) => {
                                     type="number"
                                     style={{ width: "40px", height: "25px" }}
                                     disabled={true}
-                                    value={info.qty}
+                                    value={info?.qty}
                                 />
                             </div>
-                            <div className="d-inline pt-2 barnd-text ml-3">{info.totalPrice} ر.س</div>
+                            <div className="d-inline pt-2 barnd-text ml-3">{info?.totalPrice} ر.س</div>
                         </Col>
                     </Row>
                 </div>

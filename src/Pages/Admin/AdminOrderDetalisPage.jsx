@@ -2,7 +2,11 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import AdminSideBar from '../../Components/Admin/AdminSideBar'
 import AdminOrderDetalis from '../../components/Admin/AdminOrderDetalis'
+import Dashboard from '../../components/DashboardAdmin/DasboardAdmin'
+import { collection } from 'firebase/firestore'
+import { fireStore } from '../../firebase'
 const AdminOrderDetalisPage = () => {
+    
     return (
         <Container >
             <Row className='py-3'>
@@ -11,7 +15,7 @@ const AdminOrderDetalisPage = () => {
                 </Col>
 
                 <Col sm="9" xs="10" md="10">
-                    <AdminOrderDetalis />
+                    <AdminOrderDetalis  />  
                 </Col>
             </Row>
         </Container>

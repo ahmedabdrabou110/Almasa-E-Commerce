@@ -4,16 +4,22 @@ import Multiselect from 'multiselect-react-dropdown';
 import { Add } from '@mui/icons-material';
 import { Toaster } from 'react-hot-toast';
 import useAddProduct from '../../Hooks/AddProductHook';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
+import { fireStore } from '../../firebase';
+import { collection } from 'firebase/firestore';
 const AdminAddProducts = () => {
     const {
         title,setTitle,description , setDescription , discountPrice, setDiscountPrice,price,setPrice ,image, setImage ,mainCategory, setMainCategory ,secondaryCategory , setSecondaryCategory, brand ,setBrand,
         handleProductImg,onSelect , onRemove , options , handleAddProducts
     } = useAddProduct();
+    const collectionRef = collection(fireStore , "categories");
+    const [data , loading , error] = useCollectionData(collectionRef);
+    
 
  
 
     return (
-        <div>
+        <div style={{marginTop:"60px"}}>
             <Toaster />
             <Row className="justify-content-start ">
                 <div className="admin-content-text pb-4"> اضافه منتج جديد</div>
@@ -63,12 +69,9 @@ const AdminAddProducts = () => {
                         required
                         onChange={e =>setMainCategory(e.target.value)}
                         className="select input-form-area mt-3 px-2 ">
-                        <option value="عبايات">عبايات</option>
-                        <option value="أكسسوارات"> أكسسوارات</option>
-                        <option value="جلابيات"> جلابيات</option>
-                        <option value="عطورات"> عطورات</option>
-                        <option value="تخفيضات"> تخفيضات</option>
-                        <option value="اعلانات"> اعلانات</option>
+                        {data?.map((item , index) => (
+                            <option key={index} value={item?.category}>{item?.category}</option>
+                        ))}
                     </select>
 
                     <Multiselect

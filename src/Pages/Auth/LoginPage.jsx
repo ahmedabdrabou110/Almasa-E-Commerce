@@ -28,7 +28,9 @@ const LoginPage = () => {
                             />
                             <button type='submit' className="btn-login mx-auto mt-4">تسجيل الدخول</button>
                         </form>
-                        <label className="mx-auto my-4">
+                        
+                    </Col>
+                    <label className="mx-auto my-4" style={{textAlign:"center"}}>
                             ليس لديك حساب ؟{" "}
                             <Link to="/register" style={{textDecoration:'none'}}>
                                 <span style={{ cursor: "pointer" }} className="text-danger">
@@ -36,25 +38,6 @@ const LoginPage = () => {
                                 </span>
                             </Link>
                         </label>
-
-
-
-                    </Col>
-
-
-                    <label className="mx-auto my-4">
-                    <Link to="/admin/allproducts" style={{textDecoration:'none'}}>
-                        <span style={{ cursor: "pointer" }} className="text-danger">
-                            الدخول ادمن
-                        </span>
-                    </Link>
-
-                    <Link to="/user/allorders" style={{textDecoration:'none'}}>
-                        <span style={{ cursor: "pointer" }} className="text-danger mx-3">
-                            الدخول مستخدم
-                        </span>
-                    </Link>
-                </label>
                 </Row>
             </Container>
     )

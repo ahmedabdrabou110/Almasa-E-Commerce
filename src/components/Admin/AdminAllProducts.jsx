@@ -35,7 +35,7 @@ const AdminAllProducts = () => {
         }
     }
     return (
-        <div>
+        <div style={{overflowY:"scroll" , overflowX:"hidden"}}>
             <Toaster />
             {/* <div className='admin-content-text'>ادارة جميع المنتجات</div> */}
             <Row className='justify-content-start'>

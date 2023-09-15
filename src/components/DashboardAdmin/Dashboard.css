@@ -1,0 +1,9 @@
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
+    right: 0 !important;
+}
+
+@media (min-width: 600px){
+    .css-2dum1v-MuiDrawer-docked .MuiDrawer-paper {
+        z-index: 0 !important;
+    }
+}

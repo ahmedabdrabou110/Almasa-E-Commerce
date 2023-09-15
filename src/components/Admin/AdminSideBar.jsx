@@ -7,12 +7,12 @@ const AdminSideBar = () => {
             <div className="d-flex flex-column">
                 <Link to="/admin/allorders" style={{ textDecoration: 'none' }}>
                     <div className="admin-side-text mt-3 border-bottom p-2 mx-auto text-center">
-                        اداره الطلبات
+                         الطلبات
                     </div>
                 </Link>
                 <Link to="/admin/allproducts" style={{ textDecoration: 'none' }}>
                     <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
-                        اداره المنتجات
+                        كل المنتجات
                     </div>
                 </Link>
                 <Link to="/admin/addbrand" style={{ textDecoration: 'none' }}>
@@ -27,14 +27,24 @@ const AdminSideBar = () => {
                     </div>
                 </Link>
 
-                <Link to="/admin/addsubcategory" style={{ textDecoration: 'none' }}>
-                    {/* <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
-                        اضف تصنيف فرعي
-                    </div> */}
+                <Link to="/admin/allusers" style={{ textDecoration: 'none' }}>
+                    <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
+                     كل العملاء 
+                    </div>
                 </Link>
                 <Link to="/admin/addproduct" style={{ textDecoration: 'none' }}>
                     <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
                         اضف منتج
+                    </div>
+                </Link>
+                <Link to="/admin/adduser" style={{ textDecoration: 'none' }}>
+                    <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
+                        اضف عميل
+                    </div>
+                </Link>
+                <Link to="/admin/ads" style={{ textDecoration: 'none' }}>
+                    <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
+                        اضافة اعلان 
                     </div>
                 </Link>
 

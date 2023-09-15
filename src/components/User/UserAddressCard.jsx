@@ -2,14 +2,14 @@ import React from 'react'
 import { Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Delete, Edit } from '@mui/icons-material';
-const UserAddressCard = () => {
+const UserAddressCard = ({item}) => {
     return (
         <div className="user-address-card my-3 px-2">
             <Row className="d-flex justify-content-between  ">
                 <Col xs="1">
-                    <div className="p-2">المنزل</div>
+                    <div className="p-2">{item.address}</div>
                 </Col>
-                <Col xs="4" className="d-flex d-flex justify-content-end">
+                {/* <Col xs="4" className="d-flex d-flex justify-content-end">
                     <div className="d-flex p-2">
                         <div className="d-flex mx-2">
                             <Edit />
@@ -22,7 +22,7 @@ const UserAddressCard = () => {
                             <p className="item-delete-edit"> ازاله</p>
                         </div>
                     </div>
-                </Col>
+                </Col> */}
             </Row>
 
             <Row>
@@ -33,7 +33,7 @@ const UserAddressCard = () => {
                             fontFamily: "Almarai",
                             fontSize: "14px",
                         }}>
-                        القاهرة مدينه نصر شارع التسعين عماره ١٤
+                        {item.details}
                     </div>
                 </Col>
             </Row>
@@ -56,7 +56,7 @@ const UserAddressCard = () => {
                             fontSize: "16px",
                         }}
                         className="mx-2">
-                        0021313432423
+                        {item.number}
                     </div>
                 </Col>
             </Row>
